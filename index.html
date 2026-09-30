@@ -1,927 +1,464 @@
-```html
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>India vs West Indies Live | Cricket News & Blog</title>
-
-  <meta name="description"
-        content="India vs West Indies live cricket score, latest news, match updates, previews and cricket blogs.">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f1f5f9;
-      color: #172033;
-      line-height: 1.6;
-    }
-
-    /* =========================
-       HEADER
-    ========================= */
-
-    header {
-      background: linear-gradient(135deg, #075985, #1d4ed8);
-      color: white;
-    }
-
-    .top-header {
-      max-width: 1200px;
-      margin: auto;
-      padding: 25px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 25px;
-      font-weight: 800;
-    }
-
-    .logo span {
-      color: #facc15;
-    }
-
-    nav {
-      display: flex;
-      gap: 25px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 15px;
-    }
-
-    nav a:hover {
-      color: #facc15;
-    }
-
-    /* =========================
-       HERO
-    ========================= */
-
-    .hero {
-      text-align: center;
-      padding: 55px 20px;
-    }
-
-    .hero h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      font-size: 17px;
-      opacity: .9;
-    }
-
-    /* =========================
-       MAIN
-    ========================= */
-
-    .container {
-      max-width: 1100px;
-      margin: 35px auto;
-      padding: 0 20px;
-    }
-
-    /* =========================
-       LIVE MATCH
-    ========================= */
-
-    .match-card {
-      background: white;
-      border-radius: 18px;
-      padding: 30px;
-      box-shadow: 0 8px 30px rgba(0,0,0,.08);
-    }
-
-    .match-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 25px;
-    }
-
-    .match-header h2 {
-      font-size: 22px;
-    }
-
-    .status {
-      background: #f59e0b;
-      color: white;
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: bold;
-    }
-
-    .status.live {
-      background: #dc2626;
-    }
-
-    .teams {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      text-align: center;
-    }
-
-    .team {
-      width: 35%;
-    }
-
-    .flag {
-      font-size: 65px;
-      margin-bottom: 8px;
-    }
-
-    .team h3 {
-      font-size: 24px;
-    }
-
-    .score {
-      font-size: 34px;
-      font-weight: 800;
-      margin-top: 8px;
-    }
-
-    .vs {
-      font-size: 24px;
-      font-weight: 800;
-      color: #64748b;
-    }
-
-    .match-info {
-      margin-top: 30px;
-      padding-top: 20px;
-      border-top: 1px solid #e2e8f0;
-
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-    }
-
-    .info {
-      background: #f8fafc;
-      padding: 15px;
-      border-radius: 10px;
-      text-align: center;
-    }
-
-    .info small {
-      display: block;
-      color: #64748b;
-    }
-
-    .update-box {
-      margin-top: 20px;
-      padding: 18px;
-      border-left: 5px solid #2563eb;
-      background: #eff6ff;
-      border-radius: 8px;
-    }
-
-    .update-box h3 {
-      color: #1d4ed8;
-      margin-bottom: 5px;
-    }
-
-    .updated-time {
-      text-align: right;
-      margin-top: 12px;
-      font-size: 12px;
-      color: #94a3b8;
-    }
-
-    /* =========================
-       SECTION
-    ========================= */
-
-    section {
-      margin-top: 55px;
-    }
-
-    .section-heading {
-      margin-bottom: 25px;
-    }
-
-    .section-heading h2 {
-      font-size: 30px;
-    }
-
-    .section-heading p {
-      color: #64748b;
-    }
-
-    /* =========================
-       NEWS
-    ========================= */
-
-    .news-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .news-card {
-      background: white;
-      padding: 24px;
-      border-radius: 15px;
-      box-shadow: 0 5px 20px rgba(0,0,0,.06);
-      border-left: 4px solid #2563eb;
-      transition: .2s;
-    }
-
-    .news-card:hover {
-      transform: translateY(-4px);
-    }
-
-    .tag {
-      display: inline-block;
-      background: #dbeafe;
-      color: #1d4ed8;
-      padding: 4px 9px;
-      border-radius: 5px;
-      font-size: 11px;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    .news-card h3 {
-      font-size: 20px;
-      margin-bottom: 8px;
-    }
-
-    .news-card p {
-      color: #64748b;
-    }
-
-    .date {
-      display: block;
-      margin-top: 12px;
-      font-size: 12px;
-      color: #94a3b8;
-    }
-
-    /* =========================
-       BLOG
-    ========================= */
-
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .blog-card {
-      background: white;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 5px 20px rgba(0,0,0,.06);
-      transition: .2s;
-    }
-
-    .blog-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .blog-image {
-      height: 160px;
-      background: linear-gradient(135deg, #e0f2fe, #dbeafe);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 65px;
-    }
-
-    .blog-content {
-      padding: 20px;
-    }
-
-    .category {
-      color: #2563eb;
-      font-size: 11px;
-      font-weight: bold;
-    }
-
-    .blog-content h3 {
-      margin: 8px 0;
-      font-size: 19px;
-      line-height: 1.4;
-    }
-
-    .blog-content p {
-      color: #64748b;
-      font-size: 14px;
-    }
-
-    .read-more {
-      display: inline-block;
-      margin-top: 15px;
-      color: #1d4ed8;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .read-more:hover {
-      text-decoration: underline;
-    }
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-      background: #0f172a;
-      color: #cbd5e1;
-      margin-top: 60px;
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    footer h2 {
-      color: white;
-      margin-bottom: 10px;
-    }
-
-    footer p {
-      font-size: 14px;
-    }
-
-    /* =========================
-       MOBILE
-    ========================= */
-
-    @media (max-width: 750px) {
-
-      .top-header {
-        flex-direction: column;
-        gap: 15px;
-      }
-
-      nav {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .hero h1 {
-        font-size: 30px;
-      }
-
-      .teams {
-        flex-direction: column;
-        gap: 20px;
-      }
-
-      .team {
-        width: 100%;
-      }
-
-      .vs {
-        font-size: 18px;
-      }
-
-      .match-info {
-        grid-template-columns: 1fr;
-      }
-
-      .news-grid,
-      .blog-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demo</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+}
+
+body{
+  background:#0f1020;
+  color:white;
+}
+
+.container{
+  display:flex;
+  flex-direction:row-reverse;
+  min-height:100vh;
+}
+
+.demo{
+  width:70%;
+  background:#111;
+  position:relative;
+}
+
+iframe{
+  width:100%;
+  height:100vh;
+  border:none;
+}
+
+.right{
+  width:30%;
+  padding:30px 22px;
+  background:linear-gradient(180deg,#181a35,#0b0c18);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow-y:auto;
+}
+
+.box{
+  width:100%;
+  background:rgba(10,10,10,.88);
+  border:1px solid #d4af37;
+  border-radius:22px;
+  padding:26px 20px;
+  text-align:center;
+  box-shadow:0 0 35px rgba(212,175,55,.28);
+}
+
+.badge{
+  display:inline-block;
+  background:#d4af37;
+  color:#111;
+  padding:8px 18px;
+  border-radius:30px;
+  font-weight:800;
+  margin-bottom:16px;
+}
+
+h1{
+  font-size:34px;
+  color:#ffd86b;
+  margin-bottom:10px;
+  text-transform:uppercase;
+}
+
+.sub{
+  font-size:17px;
+  line-height:1.5;
+  margin-bottom:22px;
+  color:#eee;
+}
+
+.features{
+  display:grid;
+  gap:12px;
+  margin:22px 0;
+}
+
+.feature{
+  background:linear-gradient(90deg,#1b1b1b,#2b2208);
+  border:1px solid rgba(212,175,55,.55);
+  padding:14px;
+  border-radius:14px;
+  font-size:17px;
+  font-weight:700;
+}
+
+.feature span{
+  color:#ffd86b;
+}
+
+/* Signup Button */
+.signup-btn{
+  display:inline-block;
+  margin-top:8px;
+  padding:9px 16px;
+  background:#25D366;
+  color:#fff;
+  text-decoration:none;
+  border-radius:9px;
+  font-size:15px;
+  font-weight:800;
+  border:1px solid #1ebe5d;
+  transition:.3s;
+}
+
+.signup-btn:hover{
+  background:#1ebe5d;
+  transform:scale(1.03);
+}
+
+.website-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-top:16px;
+  font-size:14px;
+  font-weight:bold;
+}
+
+.website-row a{
+  text-decoration:none;
+}
+
+.website{
+  color:#25D366;
+}
+
+.whatsapp-small{
+  color:#ffd86b;
+}
+
+.cta{
+  display:block;
+  background:#25D366;
+  color:#fff;
+  text-decoration:none;
+  padding:17px;
+  border-radius:16px;
+  font-size:20px;
+  font-weight:900;
+  margin-top:22px;
+  box-shadow:0 8px 18px rgba(37,211,102,.35);
+  transition:.3s;
+}
+
+.cta:hover{
+  transform:scale(1.03);
+  background:#1ebe5d;
+}
+
+/* Floating Signup Button */
+.floating-signup{
+  position:absolute;
+  top:20px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:50;
+  background:#ff1744;
+  color:#fff;
+  padding:12px 24px;
+  border-radius:8px;
+  font-size:18px;
+  font-weight:900;
+  border:3px solid #fff;
+  cursor:pointer;
+  box-shadow:0 8px 20px rgba(255,23,68,0.6);
+  transition:.3s;
+  text-decoration:none;
+  display:inline-block;
+}
+
+.floating-signup:hover{
+  transform:translateX(-50%) scale(1.08);
+  background:#ff5722;
+  box-shadow:0 12px 25px rgba(255,23,68,0.8);
+}
+
+.trust{
+  margin-top:16px;
+  color:#ccc;
+  font-size:14px;
+  line-height:1.5;
+}
+
+.footer{
+  margin-top:18px;
+  font-size:12px;
+  color:#aaa;
+  line-height:1.5;
+}
+
+.bonus-popup{
+  position:fixed;
+  inset:0;
+  z-index:100;
+  display:grid;
+  place-items:center;
+  padding:20px;
+  background:rgba(0,0,0,.78);
+}
+
+.bonus-popup[hidden]{
+  display:none;
+}
+
+.bonus-dialog{
+  position:relative;
+  width:min(100%,420px);
+  padding:34px 24px 28px;
+  border:2px solid #d4af37;
+  border-radius:16px;
+  background:linear-gradient(145deg,#24210f,#111218 70%);
+  text-align:center;
+  box-shadow:0 18px 60px rgba(0,0,0,.65);
+  animation:popup-enter .24s ease-out;
+}
+
+.bonus-close{
+  position:absolute;
+  top:8px;
+  right:12px;
+  border:0;
+  background:transparent;
+  color:#ddd;
+  font-size:28px;
+  line-height:1;
+  cursor:pointer;
+}
+
+.bonus-dialog h2{
+  margin-bottom:10px;
+  color:#ffd86b;
+  font-size:30px;
+}
+
+.bonus-dialog p{
+  margin-bottom:22px;
+  color:#eee;
+  line-height:1.5;
+}
+
+.bonus-claim{
+  display:block;
+  padding:14px 18px;
+  border-radius:8px;
+  background:#25D366;
+  color:#fff;
+  font-size:17px;
+  font-weight:800;
+  text-decoration:none;
+}
+
+.bonus-claim:hover{
+  background:#1ebe5d;
+}
+
+.bonus-claim.chaibet-claim{
+  background:#e4b833;
+  color:#17130a;
+}
+
+.bonus-claim.chaibet-claim:hover{
+  background:#f0ca55;
+}
+
+@keyframes popup-enter{
+  from{opacity:0;transform:translateY(10px) scale(.97)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .bonus-dialog{animation:none}
+}
+
+@media(max-width:768px){
+  .container{
+    flex-direction:column-reverse;
+  }
+
+  .demo,
+  .right{
+    width:100%;
+  }
+
+  iframe{
+    height:500px;
+  }
+
+  .right{
+    padding:20px;
+  }
+}
+
+@media(max-width:480px){
+  h1{
+    font-size:28px;
+  }
+
+  .sub{
+    font-size:16px;
+  }
+
+  .feature{
+    font-size:16px;
+    padding:12px;
+  }
+
+  .signup-btn{
+    font-size:14px;
+    padding:8px 13px;
+  }
+
+  .cta{
+    font-size:18px;
+    padding:15px;
+  }
+
+  .website-row{
+    flex-direction:column;
+    gap:8px;
+  }
+}
+</style>
+
 </head>
 
 <body>
 
-  <!-- =========================
-       HEADER
-  ========================= -->
+<div class="bonus-popup" id="bonusPopup" role="dialog" aria-modal="true" aria-labelledby="bonusTitle">
+  <div class="bonus-dialog">
+    <button class="bonus-close" id="bonusClose" type="button" aria-label="Close bonus popup">&times;</button>
+    <h2 id="bonusTitle">Bonus Offer</h2>
+    <p>10% Deposit Bonus<br>15% Losing Bonus<br>3% Referral Bonus</p>
+    <a class="bonus-claim chaibet-claim" href="https://www.chaibet.com/?code=ice0000">Sign Up with Chaibet</a>
+  </div>
+</div>
 
-  <header>
+<div class="container">
 
-    <div class="top-header">
+  <div class="demo">
+    <a href="https://www.chaibet.com/?code=ice0000" target="_blank" rel="noopener noreferrer" class="floating-signup">🔥 SIGN UP WITH CHAIBET 🔥</a>
+    <iframe src="https://www.chaibet.com/?code=ice0000"></iframe>
+  </div>
 
-      <div class="logo">
-        🏏 Cricket<span>Live</span>
-      </div>
+  <div class="right">
+    <div class="box">
 
-      <nav>
-        <a href="#live">Live</a>
-        <a href="#news">News</a>
-        <a href="#blog">Blog</a>
-      </nav>
+  <div class="badge">CHAIBET</div>
 
+  <h1>Get Your ID Now</h1>
+
+  <p class="sub">
+    Fast auto website service with easy deposit support.
+    New users can start quickly through WhatsApp.
+  </p>
+
+  <div class="features">
+
+    <div class="feature">
+      Minimum Deposit: <span>₹100 Only</span>
     </div>
 
-    <div class="hero">
-
-      <h1>India vs West Indies</h1>
-
-      <p>
-        Live Cricket Score • Latest News • Match Updates • Cricket Blog
-      </p>
-
+    <div class="feature">
+      Welcome Bonus: <span>10%</span>
     </div>
 
-  </header>
-
-
-  <main class="container">
-
-
-    <!-- =========================
-         LIVE MATCH
-    ========================= -->
-
-    <section id="live">
-
-      <div class="match-card">
-
-        <div class="match-header">
-
-          <h2>🇮🇳 India vs West Indies 🇯🇲</h2>
-
-          <span class="status" id="matchStatus">
-            UPCOMING
-          </span>
-
-        </div>
-
-
-        <div class="teams">
-
-          <div class="team">
-
-            <div class="flag">🇮🇳</div>
-
-            <h3>India</h3>
-
-            <div class="score" id="indiaScore">
-              -
-            </div>
-
-          </div>
-
-
-          <div class="vs">
-            VS
-          </div>
-
-
-          <div class="team">
-
-            <div class="flag">🏝️</div>
-
-            <h3>West Indies</h3>
-
-            <div class="score" id="wiScore">
-              -
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <div class="match-info">
-
-          <div class="info">
-
-            <small>Match</small>
-
-            <strong>
-              2nd ODI
-            </strong>
-
-          </div>
-
-
-          <div class="info">
-
-            <small>Venue</small>
-
-            <strong>
-              Guwahati
-            </strong>
-
-          </div>
-
-
-          <div class="info">
-
-            <small>Start Time</small>
-
-            <strong>
-              2:00 PM IST
-            </strong>
-
-          </div>
-
-        </div>
-
-
-        <div class="update-box">
-
-          <h3>🏏 Match Update</h3>
-
-          <p id="matchUpdate">
-            India vs West Indies 2nd ODI starts at 2:00 PM IST.
-          </p>
-
-        </div>
-
-
-        <div class="updated-time">
-
-          Last updated:
-          <span id="lastUpdated">--</span>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         NEWS
-    ========================= -->
-
-    <section id="news">
-
-      <div class="section-heading">
-
-        <h2>📰 Latest Cricket News</h2>
-
-        <p>
-          Latest India vs West Indies updates
-        </p>
-
-      </div>
-
-
-      <div class="news-grid">
-
-
-        <article class="news-card">
-
-          <span class="tag">
-            IND vs WI
-          </span>
-
-          <h3>
-            India vs West Indies 2nd ODI Today in Guwahati
-          </h3>
-
-          <p>
-            India take on West Indies in the second ODI at Barsapara
-            Cricket Stadium, Guwahati. The match is scheduled to begin
-            at 2:00 PM IST.
-          </p>
-
-          <span class="date">
-            September 30, 2026
-          </span>
-
-        </article>
-
-
-        <article class="news-card">
-
-          <span class="tag">
-            WEST INDIES
-          </span>
-
-          <h3>
-            Justin Greaves Ruled Out of Second ODI
-          </h3>
-
-          <p>
-            West Indies opener Justin Greaves has been ruled out of
-            the second ODI after suffering a calf injury during his
-            century in the first match.
-          </p>
-
-          <span class="date">
-            September 29, 2026
-          </span>
-
-        </article>
-
-
-        <article class="news-card">
-
-          <span class="tag">
-            INDIA
-          </span>
-
-          <h3>
-            Virat Kohli Reaches 15,000 ODI Runs
-          </h3>
-
-          <p>
-            Virat Kohli reached the landmark of 15,000 ODI runs during
-            India's first ODI against West Indies.
-          </p>
-
-          <span class="date">
-            September 27, 2026
-          </span>
-
-        </article>
-
-
-        <article class="news-card">
-
-          <span class="tag">
-            MATCH RESULT
-          </span>
-
-          <h3>
-            India Win First ODI by Eight Wickets
-          </h3>
-
-          <p>
-            India chased West Indies' target successfully in the
-            opening ODI and took a 1–0 lead in the series.
-          </p>
-
-          <span class="date">
-            September 27, 2026
-          </span>
-
-        </article>
-
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         BLOG
-    ========================= -->
-
-    <section id="blog">
-
-      <div class="section-heading">
-
-        <h2>✍️ Cricket Blog</h2>
-
-        <p>
-          Match previews, analysis and cricket stories
-        </p>
-
-      </div>
-
-
-      <div class="blog-grid">
-
-
-        <article class="blog-card">
-
-          <div class="blog-image">
-            🏏
-          </div>
-
-          <div class="blog-content">
-
-            <span class="category">
-              MATCH PREVIEW
-            </span>
-
-            <h3>
-              India vs West Indies 2nd ODI: What to Expect
-            </h3>
-
-            <p>
-              India enter the second ODI with a 1–0 series lead.
-              The Guwahati match provides another opportunity for
-              both teams to test their combinations.
-            </p>
-
-            <a href="#" class="read-more">
-              Read Full Blog →
-            </a>
-
-          </div>
-
-        </article>
-
-
-        <article class="blog-card">
-
-          <div class="blog-image">
-            🇮🇳
-          </div>
-
-          <div class="blog-content">
-
-            <span class="category">
-              PLAYER STORY
-            </span>
-
-            <h3>
-              Virat Kohli's Record-Breaking ODI Milestone
-            </h3>
-
-            <p>
-              Kohli's unbeaten 139 in the opening ODI helped India
-              complete a successful chase and took him past another
-              major ODI milestone.
-            </p>
-
-            <a href="#" class="read-more">
-              Read Full Blog →
-            </a>
-
-          </div>
-
-        </article>
-
-
-        <article class="blog-card">
-
-          <div class="blog-image">
-            🌴
-          </div>
-
-          <div class="blog-content">
-
-            <span class="category">
-              WEST INDIES
-            </span>
-
-            <h3>
-              Can West Indies Fight Back?
-            </h3>
-
-            <p>
-              West Indies showed plenty of promise with the bat in
-              the first ODI. They will look for improvements across
-              all departments in the second match.
-            </p>
-
-            <a href="#" class="read-more">
-              Read Full Blog →
-            </a>
-
-          </div>
-
-        </article>
-
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <!-- =========================
-       FOOTER
-  ========================= -->
-
-  <footer>
-
-    <h2>🏏 CricketLive</h2>
-
-    <p>
-      India vs West Indies Live Scores, Cricket News & Blog
-    </p>
-
-    <p>
-      © 2026 CricketLive. All rights reserved.
-    </p>
-
-  </footer>
-
-
-  <!-- =========================
-       JAVASCRIPT
-  ========================= -->
-
-  <script>
-
-    /*
-      ==========================================
-      LIVE SCORE API
-      ==========================================
-
-      Replace YOUR_LIVE_SCORE_API_URL with
-      your cricket API endpoint.
-
-      Expected JSON:
-
-      {
-        "status": "LIVE",
-        "india": "150/3",
-        "westIndies": "295/7",
-        "update": "India 150/3 after 25 overs"
-      }
-
-      ==========================================
-    */
-
-
-    function updateMatch(data) {
-
-      document.getElementById("matchStatus").textContent =
-        data.status || "LIVE";
-
-      document.getElementById("indiaScore").textContent =
-        data.india || "-";
-
-      document.getElementById("wiScore").textContent =
-        data.westIndies || "-";
-
-      document.getElementById("matchUpdate").textContent =
-        data.update || "Waiting for live update...";
-
-      document.getElementById("lastUpdated").textContent =
-        new Date().toLocaleTimeString();
-
-      if (data.status === "LIVE") {
-
-        document
-          .getElementById("matchStatus")
-          .classList.add("live");
-
-      }
-
-    }
-
-
-    /*
-      INITIAL MATCH DATA
-    */
-
-    updateMatch({
-
-      status: "UPCOMING",
-
-      india: "-",
-
-      westIndies: "-",
-
-      update:
-        "India vs West Indies 2nd ODI starts at 2:00 PM IST."
-
-    });
-
-
-    /*
-      ==========================================
-      AUTO REFRESH
-      ==========================================
-
-      Uncomment this code after adding your API.
-
-      ==========================================
-
-      setInterval(async function() {
-
-        try {
-
-          const response =
-            await fetch("YOUR_LIVE_SCORE_API_URL");
-
-          const data =
-            await response.json();
-
-          updateMatch(data);
-
-        } catch (error) {
-
-          console.log(
-            "Unable to fetch live score:",
-            error
-          );
-
-        }
-
-      }, 30000);
-
-    */
-
-  </script>
+    <div class="feature">
+      Chaibet Signup:
+      <a
+        class="signup-btn"
+        href="https://www.chaibet.com/?code=ice0000"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Sign Up with Chaibet
+      </a>
+    </div>
+
+    <div class="feature">
+      Quick Help:
+      <span>Deposit &amp; Withdrawal Support</span>
+    </div>
+
+  </div>
+
+  <div class="website-row">
+
+    <a
+      class="website"
+      href="https://www.chaibet.com/?code=ice0000"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      🌐 https://www.chaibet.com/?code=ice0000
+    </a>
+
+    <a
+      class="whatsapp-small"
+      href="https://wa.me/+447523709988"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      💬 WhatsApp
+    </a>
+
+  </div>
+
+  <a
+    class="cta"
+    href="https://wa.me/+447523709988?text=Hello%20I%20want%20new%20manual%20ID"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    📲 WhatsApp Now
+  </a>
+
+  <p class="trust">
+    ✅ Trusted Manual Support<br>
+    ✅ Simple Process<br>
+    ✅ Fast Response
+  </p>
+
+  <div class="footer">
+    18+ Only | Play Responsibly | Follow Your Local Laws | T&amp;C Apply
+  </div>
+
+</div>
+
+  </div>
+
+</div>
+
+<script>
+const bonusPopup = document.getElementById('bonusPopup');
+const bonusClose = document.getElementById('bonusClose');
+
+function closeBonusPopup(){
+  bonusPopup.hidden = true;
+}
+
+bonusClose.addEventListener('click', closeBonusPopup);
+bonusPopup.addEventListener('click', (event) => {
+  if(event.target === bonusPopup) closeBonusPopup();
+});
+document.addEventListener('keydown', (event) => {
+  if(event.key === 'Escape') closeBonusPopup();
+});
+</script>
 
 </body>
 </html>
-```
