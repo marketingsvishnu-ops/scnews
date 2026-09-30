@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -363,5 +364,564 @@
        MOBILE
     ========================= */
 
-    @media (max-width: 750px
+    @media (max-width: 750px) {
+
+      .top-header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero h1 {
+        font-size: 30px;
+      }
+
+      .teams {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .team {
+        width: 100%;
+      }
+
+      .vs {
+        font-size: 18px;
+      }
+
+      .match-info {
+        grid-template-columns: 1fr;
+      }
+
+      .news-grid,
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================= -->
+
+  <header>
+
+    <div class="top-header">
+
+      <div class="logo">
+        🏏 Cricket<span>Live</span>
+      </div>
+
+      <nav>
+        <a href="#live">Live</a>
+        <a href="#news">News</a>
+        <a href="#blog">Blog</a>
+      </nav>
+
+    </div>
+
+    <div class="hero">
+
+      <h1>India vs West Indies</h1>
+
+      <p>
+        Live Cricket Score • Latest News • Match Updates • Cricket Blog
+      </p>
+
+    </div>
+
+  </header>
+
+
+  <main class="container">
+
+
+    <!-- =========================
+         LIVE MATCH
+    ========================= -->
+
+    <section id="live">
+
+      <div class="match-card">
+
+        <div class="match-header">
+
+          <h2>🇮🇳 India vs West Indies 🇯🇲</h2>
+
+          <span class="status" id="matchStatus">
+            UPCOMING
+          </span>
+
+        </div>
+
+
+        <div class="teams">
+
+          <div class="team">
+
+            <div class="flag">🇮🇳</div>
+
+            <h3>India</h3>
+
+            <div class="score" id="indiaScore">
+              -
+            </div>
+
+          </div>
+
+
+          <div class="vs">
+            VS
+          </div>
+
+
+          <div class="team">
+
+            <div class="flag">🏝️</div>
+
+            <h3>West Indies</h3>
+
+            <div class="score" id="wiScore">
+              -
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="match-info">
+
+          <div class="info">
+
+            <small>Match</small>
+
+            <strong>
+              2nd ODI
+            </strong>
+
+          </div>
+
+
+          <div class="info">
+
+            <small>Venue</small>
+
+            <strong>
+              Guwahati
+            </strong>
+
+          </div>
+
+
+          <div class="info">
+
+            <small>Start Time</small>
+
+            <strong>
+              2:00 PM IST
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <div class="update-box">
+
+          <h3>🏏 Match Update</h3>
+
+          <p id="matchUpdate">
+            India vs West Indies 2nd ODI starts at 2:00 PM IST.
+          </p>
+
+        </div>
+
+
+        <div class="updated-time">
+
+          Last updated:
+          <span id="lastUpdated">--</span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         NEWS
+    ========================= -->
+
+    <section id="news">
+
+      <div class="section-heading">
+
+        <h2>📰 Latest Cricket News</h2>
+
+        <p>
+          Latest India vs West Indies updates
+        </p>
+
+      </div>
+
+
+      <div class="news-grid">
+
+
+        <article class="news-card">
+
+          <span class="tag">
+            IND vs WI
+          </span>
+
+          <h3>
+            India vs West Indies 2nd ODI Today in Guwahati
+          </h3>
+
+          <p>
+            India take on West Indies in the second ODI at Barsapara
+            Cricket Stadium, Guwahati. The match is scheduled to begin
+            at 2:00 PM IST.
+          </p>
+
+          <span class="date">
+            September 30, 2026
+          </span>
+
+        </article>
+
+
+        <article class="news-card">
+
+          <span class="tag">
+            WEST INDIES
+          </span>
+
+          <h3>
+            Justin Greaves Ruled Out of Second ODI
+          </h3>
+
+          <p>
+            West Indies opener Justin Greaves has been ruled out of
+            the second ODI after suffering a calf injury during his
+            century in the first match.
+          </p>
+
+          <span class="date">
+            September 29, 2026
+          </span>
+
+        </article>
+
+
+        <article class="news-card">
+
+          <span class="tag">
+            INDIA
+          </span>
+
+          <h3>
+            Virat Kohli Reaches 15,000 ODI Runs
+          </h3>
+
+          <p>
+            Virat Kohli reached the landmark of 15,000 ODI runs during
+            India's first ODI against West Indies.
+          </p>
+
+          <span class="date">
+            September 27, 2026
+          </span>
+
+        </article>
+
+
+        <article class="news-card">
+
+          <span class="tag">
+            MATCH RESULT
+          </span>
+
+          <h3>
+            India Win First ODI by Eight Wickets
+          </h3>
+
+          <p>
+            India chased West Indies' target successfully in the
+            opening ODI and took a 1–0 lead in the series.
+          </p>
+
+          <span class="date">
+            September 27, 2026
+          </span>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         BLOG
+    ========================= -->
+
+    <section id="blog">
+
+      <div class="section-heading">
+
+        <h2>✍️ Cricket Blog</h2>
+
+        <p>
+          Match previews, analysis and cricket stories
+        </p>
+
+      </div>
+
+
+      <div class="blog-grid">
+
+
+        <article class="blog-card">
+
+          <div class="blog-image">
+            🏏
+          </div>
+
+          <div class="blog-content">
+
+            <span class="category">
+              MATCH PREVIEW
+            </span>
+
+            <h3>
+              India vs West Indies 2nd ODI: What to Expect
+            </h3>
+
+            <p>
+              India enter the second ODI with a 1–0 series lead.
+              The Guwahati match provides another opportunity for
+              both teams to test their combinations.
+            </p>
+
+            <a href="#" class="read-more">
+              Read Full Blog →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <article class="blog-card">
+
+          <div class="blog-image">
+            🇮🇳
+          </div>
+
+          <div class="blog-content">
+
+            <span class="category">
+              PLAYER STORY
+            </span>
+
+            <h3>
+              Virat Kohli's Record-Breaking ODI Milestone
+            </h3>
+
+            <p>
+              Kohli's unbeaten 139 in the opening ODI helped India
+              complete a successful chase and took him past another
+              major ODI milestone.
+            </p>
+
+            <a href="#" class="read-more">
+              Read Full Blog →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <article class="blog-card">
+
+          <div class="blog-image">
+            🌴
+          </div>
+
+          <div class="blog-content">
+
+            <span class="category">
+              WEST INDIES
+            </span>
+
+            <h3>
+              Can West Indies Fight Back?
+            </h3>
+
+            <p>
+              West Indies showed plenty of promise with the bat in
+              the first ODI. They will look for improvements across
+              all departments in the second match.
+            </p>
+
+            <a href="#" class="read-more">
+              Read Full Blog →
+            </a>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <h2>🏏 CricketLive</h2>
+
+    <p>
+      India vs West Indies Live Scores, Cricket News & Blog
+    </p>
+
+    <p>
+      © 2026 CricketLive. All rights reserved.
+    </p>
+
+  </footer>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
+  <script>
+
+    /*
+      ==========================================
+      LIVE SCORE API
+      ==========================================
+
+      Replace YOUR_LIVE_SCORE_API_URL with
+      your cricket API endpoint.
+
+      Expected JSON:
+
+      {
+        "status": "LIVE",
+        "india": "150/3",
+        "westIndies": "295/7",
+        "update": "India 150/3 after 25 overs"
+      }
+
+      ==========================================
+    */
+
+
+    function updateMatch(data) {
+
+      document.getElementById("matchStatus").textContent =
+        data.status || "LIVE";
+
+      document.getElementById("indiaScore").textContent =
+        data.india || "-";
+
+      document.getElementById("wiScore").textContent =
+        data.westIndies || "-";
+
+      document.getElementById("matchUpdate").textContent =
+        data.update || "Waiting for live update...";
+
+      document.getElementById("lastUpdated").textContent =
+        new Date().toLocaleTimeString();
+
+      if (data.status === "LIVE") {
+
+        document
+          .getElementById("matchStatus")
+          .classList.add("live");
+
+      }
+
+    }
+
+
+    /*
+      INITIAL MATCH DATA
+    */
+
+    updateMatch({
+
+      status: "UPCOMING",
+
+      india: "-",
+
+      westIndies: "-",
+
+      update:
+        "India vs West Indies 2nd ODI starts at 2:00 PM IST."
+
+    });
+
+
+    /*
+      ==========================================
+      AUTO REFRESH
+      ==========================================
+
+      Uncomment this code after adding your API.
+
+      ==========================================
+
+      setInterval(async function() {
+
+        try {
+
+          const response =
+            await fetch("YOUR_LIVE_SCORE_API_URL");
+
+          const data =
+            await response.json();
+
+          updateMatch(data);
+
+        } catch (error) {
+
+          console.log(
+            "Unable to fetch live score:",
+            error
+          );
+
+        }
+
+      }, 30000);
+
+    */
+
+  </script>
+
+</body>
+</html>
 ```
